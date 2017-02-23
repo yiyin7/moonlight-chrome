@@ -732,8 +732,21 @@ function updateDefaultBitrate() {
         } else { // 2160p, 60fps
             $('#bitrateSlider')[0].MaterialSlider.change('80');
         }
+    } else if (res.lastIndexOf("1440:900", 0) === 0) {
+        if (frameRate.lastIndexOf("30", 0) === 0) { // 1440:900, 30fps
+            $('#bitrateSlider')[0].MaterialSlider.change('10');
+        } else { // 2160p, 60fps
+            $('#bitrateSlider')[0].MaterialSlider.change('20');
+        }
+    } else if (res.lastIndexOf("1920:1200", 0) === 0) {
+        if (frameRate.lastIndexOf("30", 0) === 0) { // 1920:1200, 30fps
+            $('#bitrateSlider')[0].MaterialSlider.change('10');
+        } else { // 2160p, 60fps
+            $('#bitrateSlider')[0].MaterialSlider.change('20');
+        }
+        
     } else {  // unrecognized option. In case someone screws with the JS to add custom resolutions
-        $('#bitrateSlider')[0].MaterialSlider.change('10');
+        $('#bitrateSlider')[0].MaterialSlider.change('20');
     }
 
     updateBitrateField();
